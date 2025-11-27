@@ -18,6 +18,10 @@
 
 ![](images/hercules.png)
 
+> Full power, everybody!
+
+-- *Hercules, TUGS "[High Winds](https://youtu.be/QOZM29UDcBY)"*
+
 > [!IMPORTANT]
 > **Pre-pre-alpha**
 >
