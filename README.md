@@ -58,8 +58,12 @@ particularly useful when you have many computers that you want to recommission o
 
 [//]: # (TOCGEN_TABLE_OF_CONTENTS_START)
 
+- [Security](#security)
 - [Install](#install)
 - [Usage](#usage)
+- [FAQ](#faq)
+    - [Why is it called "HerculesOS"?](#why-is-it-called-herculesos)
+    - [How big will it be?](#how-big-will-it-be)
 - [Documentation](#documentation)
 - [Repository Configuration](#repository-configuration)
 - [Contributing](#contributing)
