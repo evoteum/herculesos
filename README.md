@@ -16,6 +16,16 @@
 [//]: # (Must link to local image in current repository)
 
 
+![](images/hercules.png)
+
+> [!IMPORTANT]
+> **Pre-pre-alpha**
+>
+> HerculesOS is currently in active design and initial prototyping. Some sections of this README describe intended
+> behaviour before implementation.
+> 
+> HerculesOS is not production ready yet!
+
 
 [//]: # (Badges)
 [//]: # (OPTIONAL)
@@ -37,7 +47,8 @@ The tug that brings your Kubernetes ships home for decommissioning
 [//]: # (Must not have its own title)
 [//]: # (A detailed description of the repo)
 
-
+HerculesOS is an in-memory operating system that can be used to remotely wipe disks on a target computer. This is
+particularly useful when you have many computers that you want to recommission or decommission. It can be configured 
 
 ## Table of Contents
 
@@ -58,11 +69,12 @@ The tug that brings your Kubernetes ships home for decommissioning
 
 [//]: # (TOCGEN_TABLE_OF_CONTENTS_END)
 
-[//]: # (## Security)
+## Security
 [//]: # (OPTIONAL)
 [//]: # (May go here if it is important to highlight security concerns.)
 
-
+HerculesOS only has a small codebase, so the attack surface is tiny. Nonetheless, it is not designed to be a
+long-running operating system.
 
 [//]: # (## Background)
 [//]: # (OPTIONAL)
@@ -76,13 +88,24 @@ The tug that brings your Kubernetes ships home for decommissioning
 [//]: # (OPTIONAL IF documentation repo)
 [//]: # (ELSE REQUIRED)
 
-
+HerculesOS is designed to be booted using PXE. It will also be made available as a live image for booting from USB or
+CD. If you still have CD's that is.
 
 ## Usage
 [//]: # (REQUIRED)
 [//]: # (Explain what the thing does. Use screenshots and/or videos.)
 
+You will be able to configure how aggressive HerculesOS is with the following power levels.
 
+| Power Level    | Action                                                                                                                     |
+|----------------|----------------------------------------------------------------------------------------------------------------------------|
+| Idle Steam     | Light, non-destructive. Dry-run only.                                                                                      |
+| Harbour Steam  | Wipes ephemeral state only (tmpfs, logs, kubelet dirs). Non-destructive to user data.                                      |
+| Working Steam  | Standard disk wipe for reprovisioning the node.                                                                            |
+| Full Steam     | Secure disk wipe. single-pass zero overwrite. Suitable for most disposal needs.                                            |  
+| Boiler Redline | Enhanced-security disk wipe, n-pass overwrite (default 3, configurable). Suitable for disposal after highly sensitive use. |  
+
+As with all things in the Kubernetes world, you will be able to do this in YAML.
 
 [//]: # (Extra sections)
 [//]: # (OPTIONAL)
@@ -90,7 +113,26 @@ The tug that brings your Kubernetes ships home for decommissioning
 [//]: # (This is a space for ≥0 sections to be included,)
 [//]: # (each of which must have their own titles.)
 
+## FAQ
+### Why is it called "HerculesOS"?
 
+[Hercules](https://tugs.fandom.com/wiki/Hercules) the strongest tug boat from the classic TV show,
+[TUGS](https://en.wikipedia.org/wiki/Tugs_(TV_series)). He is given the most important and dangerous jobs in his fleet.
+
+Similarly, decommissioning a server is an important and dangerous job, which is why
+[Drydock](https://github.com/evoteum/drydock) uses HerculesOS for the task.
+
+This is because we love,
+- obscure pop culture references.
+- furthering the maritime theme of Kubernetes.
+
+### How big will it be?
+
+As small as possible, because the smaller he is, the faster he gets running, does his job, and then gets out of the way.
+We are currently targeting 20MB.
+
+For perspective, Candy Crush is approximately [326.2MB](https://apps.apple.com/cd/app/candy-crush-saga/id553834731). Not
+really a fair "like for like" comparison, but you get the point!
 
 ## Documentation
 
